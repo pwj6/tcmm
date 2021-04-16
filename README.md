@@ -1,2 +1,2 @@
-# tcmR
+# tcmsR
 tools about chinese medical
