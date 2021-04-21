@@ -15,6 +15,7 @@ m2t<-function(x,type="cid")
   y<-sapply(x,.m2t,type=type)
   y
 }
+#' @export
 .m2t<-function(x,type="cid"){
 {
     type <- match.arg(type,c("cid","molecule"))

@@ -15,6 +15,7 @@ h2m<-function(x,type="latin",output="cid")
   y<-sapply(x,.h2m,type=type,output=output)
   y
 }
+#' @export
 .h2m<-function(x,type="latin",output="cid"){
   {
     type <- match.arg(type,c("latin","pinyin","chinese"))
