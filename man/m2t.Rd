@@ -2,26 +2,24 @@
 % Please edit documentation in R/m2t.R
 \name{m2t}
 \alias{m2t}
-\title{how to make molecule to symbol or fullname}
+\title{how to make molecule to symbol and fullname}
 \usage{
-m2t(x, type = "cid", output = "symbol")
+m2t(x, type = "cid")
 }
 \arguments{
 \item{x}{is the name or cid of molecule}
 
 \item{type}{is the type of x}
-
-\item{output}{is the type of output}
 }
 \value{
-symbol or fullname
+symbol and fullname
 }
 \description{
-how to make molecule to symbol or fullname
+how to make molecule to symbol and fullname
 }
 \examples{
-.m2t(x='FER',type='molecule',output='symbol')
-.m2t(x='445858',type='cid',output='fullname')
- m2t(x=c('FER','pyrene'),type='molecule',output='symbol')
- m2t(x=c('445858','31423'),type='cid',output='fullname')
+.m2t(x='FER',type='molecule')
+.m2t(x='445858',type='cid')
+ m2t(x=c('FER','pyrene'),type='molecule')
+ m2t(x=c('445858','31423'),type='cid')
 }

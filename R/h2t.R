@@ -1,27 +1,25 @@
-#' How to make herb to symbol or fullname
+#' How to make herb to symbol and fullname
 #'
 #' @param x is the information adout herb
 #' @param type is the type of the x
-#' @param output is the type of output
 #'
-#' @return symbol or fullname
+#' @return symbol and fullname
 #' @export
 #'
 #' @examples
-#' .h2t(x='Ziziphi Spinosae Semen',type='latin',output='symbol')
-#' .h2t(x='Ziziphi Spinosae Semen',type='latin',output='fullname')
-#' h2t(x=c('Ziziphi Spinosae Semen','Abri Herba'),type='latin',output='symbol')
-#' h2t(x=c('Ziziphi Spinosae Semen','Abri Herba'),type='latin',output='fullname')
-h2t<-function(x,type="latin",output="symbol")
+#' .h2t(x='Ziziphi Spinosae Semen',type='latin')
+#' .h2t(x='huangqi',type='pinyin')
+#' h2t(x=c('Ziziphi Spinosae Semen','Abri Herba'),type='latin')
+h2t<-function(x,type="latin")
 {
-  y<-sapply(x,.h2t,type=type,output=output)
+  y<-lapply(x,.h2t,type=type)
+  names(y)<-(data.frame(x))$x
   y
 }
 #' @export
-.h2t<-function(x,type="latin",output="symbol"){
+.h2t<-function(x,type="latin"){
   {
     type <- match.arg(type,c("latin","pinyin","chinese"))
-    output <- match.arg(output,c("symbol","fullname"))
     if(length(x)>1)
       stop("Length of x must be 1!")
     else if(type=="pinyin")
@@ -31,14 +29,11 @@ h2t<-function(x,type="latin",output="symbol")
   }
   {
     if(length(x)==1)
-    {
-      if(output=="symbol")
-        y <- na.omit(unique(drugtarget[herb==x,]$symbol))
-      else
-        y <- unique(drugtarget[herb==x,]$fullname)
-    }
+      y <- drugtarget[herb==x,][,c(1,21)]
     else
       y<-NA
   }
+  y<-y[!duplicated(y$fullname),]
+  y[y==""]<-NA
   y
 }

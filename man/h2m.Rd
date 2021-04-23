@@ -4,20 +4,20 @@
 \alias{h2m}
 \title{how to make herb to molecule or cid of molecule}
 \usage{
-h2m(x, type = "latin", output = "cid")
+h2m(x, type = "latin")
 }
 \arguments{
 \item{x}{an variable}
 }
 \value{
-molecule or cid
+molecule and cid
 }
 \description{
 how to make herb to molecule or cid of molecule
 }
 \examples{
-.h2m(x='Ziziphi Spinosae Semen',type='latin',output='molecule')
-.h2m(x='Ziziphi Spinosae Semen',type='latin',output='cid')
-h2m(x=c('Ziziphi Spinosae Semen','Abri Herba'),type='latin',output='molecule')
-h2m(x=c('Ziziphi Spinosae Semen','Abri Herba'),type='latin',output='cid')
+.h2m(x='Ziziphi Spinosae Semen',type='latin')
+.h2m(x='houpu',type='pinyin')
+h2m(x=c('Ziziphi Spinosae Semen','Abri Herba'),type='latin')
+h2m(x=c('鍘氭湸','榛勮姫'),type='chinese')
 }
