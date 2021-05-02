@@ -2,8 +2,10 @@
 
 export(.h2m)
 export(.h2t)
+export(.m2h)
 export(.m2t)
 export(h2m)
 export(h2t)
+export(m2h)
 export(m2t)
 import(data.table)
